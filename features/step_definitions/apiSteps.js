@@ -1,9 +1,14 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { expect } = require('@playwright/test');
+const { expect, request } = require('@playwright/test');
 const axios = require('axios');
+
+let apiContext;
+let response;
+let responseBody;
 
 Given('the API endpoint is set to {string}', function (endpoint) {
     this.endpoint = endpoint;
+
 });
 
 When('I send a GET request', async function () {
