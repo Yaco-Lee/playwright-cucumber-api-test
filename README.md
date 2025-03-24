@@ -1,3 +1,11 @@
+
+# Caveat from Pablo Yacoli: 
+  I implemented .env, for tests to run please make sure to create an .env file in root folder with the following content:
+
+  BASE_URL=https://fake-json-api.mock.beeceptor.com
+
+
+
 # Playwright Cucumber API Test
 
 This project uses Playwright and Cucumber to test a mock API endpoint. It verifies the response status and the presence of specific fields in the response data.
@@ -28,3 +36,4 @@ The test verifies that the GET request to the following endpoint returns a 200 s
 ```
 https://app.beeceptor.com/mock-server/fake-json-api
 ```
+
