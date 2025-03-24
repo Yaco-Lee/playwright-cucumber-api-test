@@ -1,8 +1,10 @@
 
-# Caveat from Pablo Yacoli: 
-  I implemented .env, for tests to run please make sure to create an .env file in root folder with the following content:
-
+# Caveats from Pablo Yacoli: 
+  1. I implemented .env, for tests to run please make sure to create an .env file in root folder with the following content:
+  ```
   BASE_URL=https://fake-json-api.mock.beeceptor.com
+  ```
+  2. Skipped "Handle invalid user IDs" scenarios due to mock API returning 200 for any ID type 
 
 
 

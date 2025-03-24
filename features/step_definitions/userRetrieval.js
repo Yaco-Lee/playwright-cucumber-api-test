@@ -15,9 +15,24 @@ When('I send a GET request with valid user_id {int}', async function (userId) {
     await apiContext.dispose();
 });
 
+When('I send a GET request with user_id {string}', async function (userId) {
+  const apiContext = await request.newContext();
+  const endpoint = this.endpoint.replace('{user_id}', userId);
+  const response = await apiContext.get(endpoint);
+
+  this.response = {
+    status: response.status(),
+    headers: response.headers(),
+    data: await response.json().catch(() => ({}))
+  };
+
+  await apiContext.dispose();
+});
+
 Then('the response body should contain a user object with ID matching {string}', function (expectedId) {
     const user = this.response.data;
 
     expect(user).toHaveProperty('id');
     expect(String(user.id)).toBe(expectedId); 
 });
+
